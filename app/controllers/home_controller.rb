@@ -1,4 +1,4 @@
-#Initial controller for root page
+# Initial controller for root page
 class HomeController < ApplicationController
 	def index
 	end
