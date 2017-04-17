@@ -1,0 +1,11 @@
+<div class='col-md-12 col-sm-offset-2'>
+  <h2>Edit Card</h2>
+</div>
+
+<div>
+  <%= simple_form_for @card, url: cards_path, :method => :POST do |f| %>
+    <%= f.input :original_text %>
+    <%= f.input :translated_text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

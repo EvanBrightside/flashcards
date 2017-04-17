@@ -1,20 +1,22 @@
 <div class='col-md-12 col-sm-offset-2'>
   <h2>All Cards</h2>
 
-	<table>
-	  <tr>
-	    <th>Title</th>
-	    <th>Text</th>
-	  </tr>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+    </tr>
 
-	  <% @cards.each do |card| %>
-	    <tr>
-	      <td><%= card.original_text %></td>
-	      <td><%= card.translated_text %></td>
-	      <td><%= card.review_date.strftime('%d/%m/%Y') %></td>
-	    </tr>
-	  <% end %>
-	</table>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.original_text %></td>
+        <td><%= card.translated_text %></td>
+        <td><%= card.review_date.strftime('%d/%m/%Y') %></td>
+        <td><%= link_to 'Destroy Card', card_path(card), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to 'Edit Card', edit_card_path(card) %></td>
+      </tr>
+    <% end %>
+  </table>
 
   <br>
 
