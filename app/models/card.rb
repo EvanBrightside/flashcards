@@ -2,7 +2,7 @@ class Card < ApplicationRecord
   validates :original_text, :translated_text, presence: true
   validates :not_same_value, presence: true
 
-  before_validation :revision_date, on: :create
+  before_create :revision_date
 
   def not_same_value
     self.original_text.downcase != self.translated_text.downcase
