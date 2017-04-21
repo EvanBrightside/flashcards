@@ -1,0 +1,29 @@
+<p class='col-md-12 col-sm-offset-2' style='font-size: 22px;'>
+  Первый в мире удобный менеджер флеш-карточек. Именно так.
+</p>
+<br>
+<br>
+<p>
+  <%= flash[:message] %>
+  <%= flash[:error] %>
+</p>
+<br>
+<br>
+<container class='col-md-12 col-sm-offset-4' >
+<div class='col-md-4 panel panel-default'>
+  <div class='panel-body' style='font-size: 22px;'>
+    <%= @card_origianl %>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class='col-md-4'>
+  <%= simple_form_for :home, url: root_path, :method => :POST  do |f| %>
+    <%= f.hidden_field :id, :value => @card.id %>
+    <%= f.input :translated_text %>
+    <%= f.button :submit, "Check it!" %>
+  <% end %>
+</div>
+</container>
