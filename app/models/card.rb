@@ -15,7 +15,7 @@ class Card < ApplicationRecord
   end
 
   def card_update
-    self.update(review_date: Time.now + 3.days)
+    self.update(review_date: 3.days.from_now)
   end
 
   private

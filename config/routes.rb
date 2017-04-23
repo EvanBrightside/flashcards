@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :cards
   resources :home
 
-  post '/' => 'home#perform'
+  post '/check' => 'home#perform'
 end
