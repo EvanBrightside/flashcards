@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Card, :type => :model do
+RSpec.describe Card, type: :model do
   it 'has not same value' do
     card = FactoryGirl.build(:card)
     expect(card.not_same_value).to be true
