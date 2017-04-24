@@ -9,10 +9,9 @@ class HomeController < ApplicationController
     if @card.check_translation(params[:home][:translated_text])
       @card.card_update
       flash[:message] = 'Yep!'
-      redirect_back(fallback_location: root_path)
     else
       flash[:error] = 'No!'
-      redirect_back(fallback_location: root_path)
     end
+    redirect_back(fallback_location: root_path)
   end
 end

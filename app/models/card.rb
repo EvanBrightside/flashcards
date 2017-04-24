@@ -20,6 +20,6 @@ class Card < ApplicationRecord
 
   private
     def set_revision_date
-      self.review_date = Time.now + 3.days
+      self.review_date = Time.now
     end
 end
