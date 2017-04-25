@@ -899,13 +899,13 @@ Style/StabbyLambdaParentheses:
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
   StyleGuide: '#consistent-string-literals'
-  Enabled: true
+  Enabled: false
 
 Style/StringLiteralsInInterpolation:
   Description: >-
                  Checks if uses of quotes inside expressions in interpolated
                  strings match the configured preference.
-  Enabled: true
+  Enabled: false
 
 Style/StructInheritance:
   Description: 'Checks for inheritance from Struct.new.'
