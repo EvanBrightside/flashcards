@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   def perform
     @card = Card.find(params[:home][:id])
     if @card.check_translation(params[:home][:translated_text])
-      @card.card_update
+      @card.new_review_date
       flash[:message] = 'Yep!'
     else
       flash[:error] = 'No!'

@@ -14,7 +14,7 @@ class Card < ApplicationRecord
     self.translated_text == text
   end
 
-  def card_update
+  def new_review_date
     self.update(review_date: Date.today + 3.days)
   end
 
