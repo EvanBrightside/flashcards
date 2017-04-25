@@ -20,7 +20,7 @@
 <br>
 <br>
 <div class='col-md-4'>
-  <%= simple_form_for :home, url: '/check', :method => :POST  do |f| %>
+  <%= simple_form_for :home, url: '/check', method: :post  do |f| %>
     <%= f.hidden_field :id, :value => @card.id %>
     <%= f.input :translated_text, :label => 'Enter the translation' %>
     <%= f.button :submit, 'Check it!' %>

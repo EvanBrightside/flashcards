@@ -3,7 +3,7 @@
 </div>
 
 <div>
-  <%= simple_form_for @card, url: cards_path, :method => :POST do |f| %>
+  <%= simple_form_for @card, url: card_path do |f| %>
     <%= f.input :original_text %>
     <%= f.input :translated_text %>
     <%= f.button :submit %>
