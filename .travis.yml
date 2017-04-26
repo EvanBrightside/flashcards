@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.4.0
+  - 2.3.0
+script: "bundle exec rspec spec"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+addons:
+  postgresql: "9.6.2"

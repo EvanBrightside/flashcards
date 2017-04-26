@@ -1,9 +1,9 @@
-require "rails_helper"
+	require 'rails_helper'
 
-RSpec.feature "Card checking", type: :feature do
+RSpec.feature 'Card checking', type: :feature do
   describe 'Checking a card' do
 
-    it "shows flash message after correct checking" do
+    it 'shows flash message after correct checking' do
       @card = FactoryGirl.create(:card)
       visit root_path
       fill_in 'Enter the translation', with: 'Hello'
