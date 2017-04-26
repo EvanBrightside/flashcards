@@ -1,4 +1,4 @@
-# README
+# README [![Build Status](https://travis-ci.org/EvanBrightside/flashcards.svg?branch=master)](https://travis-ci.org/EvanBrightside/flashcards)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
