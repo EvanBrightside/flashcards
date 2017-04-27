@@ -1,0 +1,19 @@
+base: &base
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password:
+  host: localhost
+
+development:
+  <<: *base
+  database: flashcards_development
+
+test:
+  <<: *base
+  database: flashcards_test
+
+production:
+  <<: *base
+database: flashcards_production
