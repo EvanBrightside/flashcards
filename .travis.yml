@@ -6,7 +6,8 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+  - bundle exec rspec spec/models
+  - bundle exec rspec spec/features
 before_script:
   - psql -c 'create database flashcards_test' -U postgres
   - cp config/database.travis.yml config/database.yml
