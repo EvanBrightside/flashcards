@@ -6,14 +6,8 @@ RSpec.feature 'Card checking', type: :feature do
     let!(:card) { FactoryGirl.create(:card) }
 
     before(:each) do
+      FactoryGirl.create(:card)
       visit root_path
-    end
-
-    it 'failed message after incorrect checking' do
-      fill_in 'Enter the translation', with: 'Hella'
-      click_button 'Check it!'
-
-      expect(page).to have_content 'No!'
     end
 
     it 'successfull message after correct checking' do
@@ -21,6 +15,13 @@ RSpec.feature 'Card checking', type: :feature do
       click_button 'Check it!'
 
       expect(page).to have_content 'Yep!'
+    end
+
+    it 'failed message after incorrect checking' do
+      fill_in 'Enter the translation', with: 'Hella'
+      click_button 'Check it!'
+
+      expect(page).to have_content 'No!'
     end
   end
 end
