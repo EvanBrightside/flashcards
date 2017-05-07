@@ -1,0 +1,13 @@
+<h1>Log In</h1>
+
+<%= simple_form_for :session, { url: sessions_path } do |f| %>
+
+  <%= f.input :email, input_html: { name: 'email' }, :label => 'Email', required: true %>
+
+  <%= f.input :password, input_html: { name: 'password' }, :label => 'Password', required: true %>
+
+  <%= f.input :remember_me, input_html: { name: 'remember_me' }, as: :boolean %>
+
+  <%= f.button :submit, 'Log In', class: 'btn btn-success btn-lg' %>
+
+<% end %>

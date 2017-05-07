@@ -1,11 +1,17 @@
 # Initial controller for root page
 class HomeController < ApplicationController
   def index
-    @card = Card.sample_card.sample
+    @card = current_user.cards.sample_card.sample
+    if @card.present?
+      @card
+    else
+      flash[:error] = 'All cards done!'
+      redirect_to cards_path
+    end
   end
 
   def perform
-    @card = Card.find(params[:home][:id])
+    @card = current_user.cards.find(params[:home][:id])
     if @card.check_translation(params[:home][:translated_text])
       @card.new_review_date
       flash[:message] = 'Yep!'

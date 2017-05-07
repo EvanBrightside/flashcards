@@ -1,0 +1,8 @@
+<h1>Registration</h1>
+
+<%= simple_form_for @user do |f| %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <%= f.button :submit, 'Register', class: 'btn btn-success btn-lg' %>
+<% end %>
