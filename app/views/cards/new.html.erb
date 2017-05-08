@@ -4,8 +4,8 @@
 
 <div>
   <%= simple_form_for @card, url: cards_path do |f| %>
-    <%= f.input :original_text %>
-    <%= f.input :translated_text %>
-    <%= f.button :submit %>
+    <%= f.input :original_text, label: 'Original text' %>
+    <%= f.input :translated_text, label: 'Translated text' %>
+    <%= f.button :submit, 'Create Card' %>
   <% end %>
 </div>

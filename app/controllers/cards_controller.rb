@@ -1,11 +1,11 @@
 # Controller for Cards page
 class CardsController < ApplicationController
   def index
-    @cards = Card.all
+    @cards = current_user.cards.all
   end
 
   def show
-    @card = Card.find(params[:id])
+    @card = current_user.cards.find(params[:id])
   end
 
   def new
@@ -13,11 +13,11 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find(params[:id])
+    @card = current_user.cards.find(params[:id])
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.create(card_params)
     if @card.save!
       render :show
     else
@@ -26,7 +26,7 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card = Card.find(params[:id])
+    @card = current_user.cards.find(params[:id])
     if @card.update!(card_params)
       render :show
     else
@@ -35,7 +35,7 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = Card.find(params[:id])
+    @card = current_user.cards.find(params[:id])
     @card.destroy!
 
     redirect_to cards_path

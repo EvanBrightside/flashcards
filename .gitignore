@@ -25,3 +25,6 @@
 
 # Db config
 /config/database.yml
+
+# Secret tokens
+.env
