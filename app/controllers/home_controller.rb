@@ -2,9 +2,7 @@
 class HomeController < ApplicationController
   def index
     @card = current_user.cards.sample_card.sample
-    if @card.present?
-      @card
-    else
+    unless @card
       flash[:error] = 'All cards done!'
       redirect_to cards_path
     end

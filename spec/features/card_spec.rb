@@ -3,9 +3,8 @@ require 'support/login_helper'
 
 RSpec.feature 'Card', type: :feature do
   describe 'Card tasks' do
-
     let!(:user) { FactoryGirl.create(:user) }
-    let!(:card) { FactoryGirl.create(:card, user_id: user[:id]) }
+    let!(:card) { FactoryGirl.create(:card, user: user) }
 
     before do
       login("hello@gmail.com", "user12345")
@@ -13,9 +12,9 @@ RSpec.feature 'Card', type: :feature do
     end
 
     context "card checking" do
-      it 'successfull message after correct checking' do
-        second_card = FactoryGirl.create(:card, user_id: user[:id])
+      let!(:second_card) { FactoryGirl.create(:card, user: user) }
 
+      it 'successfull message after correct checking' do
         fill_in 'Enter the translation', with: 'Hello'
         click_button 'Check it!'
 
@@ -28,13 +27,13 @@ RSpec.feature 'Card', type: :feature do
 
         expect(page).to have_content 'No!'
       end
+    end
 
-      it 'correct message after all cards checked' do
-        fill_in 'Enter the translation', with: 'Hello'
-        click_button 'Check it!'
+    it 'correct message after all cards checked' do
+      fill_in 'Enter the translation', with: 'Hello'
+      click_button 'Check it!'
 
-        expect(page).to have_content 'All cards done!'
-      end
+      expect(page).to have_content 'All cards done!'
     end
 
     context 'card actions' do

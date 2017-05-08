@@ -3,7 +3,6 @@ require 'support/login_helper'
 
 RSpec.feature 'User', type: :feature do
   describe "the signin process" do
-
     it 'signs me in' do
       visit sign_up_path
 
