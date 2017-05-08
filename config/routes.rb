@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :cards
   resources :home
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: %i(new create destroy)
 
   post '/check', to: 'home#perform'
   get '/sign_up', to: 'users#new', as: :sign_up
