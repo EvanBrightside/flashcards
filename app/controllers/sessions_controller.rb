@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     logout
     flash[:success] = 'See you!'
-    redirect_to log_in_path
+    redirect_to root_path
   end
 end

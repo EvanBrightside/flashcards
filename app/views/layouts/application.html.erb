@@ -31,7 +31,7 @@
           <% if current_user %>
             <ul class='nav navbar-nav pull-right'>
               <li><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
-              <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+              <li><%= link_to 'Log Out', root_path, method: :delete %></li>
             </ul>
           <% end %>
         </div>
