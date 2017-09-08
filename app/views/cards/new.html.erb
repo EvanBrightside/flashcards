@@ -6,6 +6,13 @@
   <%= simple_form_for @card, url: cards_path do |f| %>
     <%= f.input :original_text, label: 'Original text' %>
     <%= f.input :translated_text, label: 'Translated text' %>
+    <%= f.file_field :image, label: 'Insert image' %>
+    <br>
+		<%= f.hidden_field :image_cache %>
+		<br>
+    <%= f.text_field :remote_image_url %>
+    <small>Enter URL to an image</small>
+    <br><br>
     <%= f.button :submit, 'Create Card' %>
   <% end %>
 </div>

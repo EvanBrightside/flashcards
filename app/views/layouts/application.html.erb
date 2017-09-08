@@ -3,7 +3,6 @@
   <head>
     <title>Flashcards</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -31,7 +30,7 @@
           <% if current_user %>
             <ul class='nav navbar-nav pull-right'>
               <li><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
-              <li><%= link_to 'Log Out', root_path, method: :delete %></li>
+              <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
             </ul>
           <% end %>
         </div>
@@ -41,12 +40,12 @@
     <div class='container'>
       <div class='col-md-12 col-sm-offset-3' style='font-size: 36px;'>
         Learn English with flashcards easily!
-      </div>
+      </div><br><br>
     </div>
-
+    <br>
     <div class='container'>
       <% flash.each do |key, value| %>
-        <div class='alert alert-<%= key %>'>
+        <div class='alert alert-<%= key %> text-center'>
           <%= value %>
         </div>
       <% end %>
