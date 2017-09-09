@@ -1,0 +1,6 @@
+<%- if  controller_name != 'users' %>
+  <li><%= link_to 'Sign Up', sign_up_path %></li>
+<% end -%>
+<%- if controller_name != 'sessions' %>
+  <li><%= link_to "Sign In", log_in_path %></li>
+<% end -%>

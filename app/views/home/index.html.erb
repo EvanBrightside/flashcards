@@ -1,20 +1,23 @@
 <container class='col-md-12 col-md-offset-3 text-center' >
   <div class="row">
-    <div class='col-md-6 panel panel-default' style='font-size: 22px;'>
+    <div class='col-md-6' style='font-size: 22px;'>
       <%= link_to(image_tag(@card.image.thumb.url, alt: 'Image'), @card.image.url, target: '_blank') if @card.image? %>
     </div>
   </div>
+  <br>
   <div class="row">
-    <div class='col-md-6 text-center panel panel-default' style='font-size: 22px;'>
+    <div class='col-md-6 text-center' style='font-size: 22px;'>
       <%= @card.original_text %>
     </div>
   </div>
   <div class="row">
-    <div class='col-md-6 text-center panel panel-default'>
+    <div class='col-md-6 text-center'>
       <%= simple_form_for :home, url: '/check', method: :post  do |f| %>
+          <br>
           <%= f.hidden_field :id, value: @card.id %>
           <%= f.input :translated_text, label: 'Enter the translation' %>
-          <%= f.button :submit, 'Check it!' %>
+          <%= f.button :submit, 'Check it!', class: 'btn btn-danger' %>
+          <br><br>
       <% end %>
     </div>
   </div>

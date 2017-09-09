@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+if (window.location.hash && window.location.hash == '#_=_') {
+    window.location.hash = '';
+}
