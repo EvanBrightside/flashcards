@@ -1,24 +1,14 @@
 # Flashcards [![Build Status](https://travis-ci.org/EvanBrightside/flashcards.svg?branch=master)](https://travis-ci.org/EvanBrightside/flashcards)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Learn English with flashcards easily!
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+* `git clone github.com/EvanBrightside/flashcards.git`
+* `bundle install`
+* `rake db:setup`
+* `rake db:seed`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tech
+* Ruby on Rails 5
+* Ruby 2.4
