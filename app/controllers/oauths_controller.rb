@@ -9,23 +9,23 @@ class OauthsController < ApplicationController
     provider = auth_params[:provider]
 
     if @user = login_from(provider)
-      redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+      redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
     else
       begin
         @user = create_from(provider)
         reset_session # protect from session fixation attack
         auto_login(@user)
-        redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+        redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
       rescue
         provider_hash = sorcery_fetch_user_hash(provider)
         user_email = provider_hash[:user_info]['email']
         @user = User.find_by_email(user_email)
-        @user.authentications.create!(:provider => provider, :uid => provider_hash[:uid])
+        @user.authentications.create!(provider: provider, uid: provider_hash[:uid])
         reset_session
         auto_login(@user)
-        redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+        redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
       rescue
-        redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
+        redirect_to root_path, alert: "Failed to login from #{provider.titleize}!"
       end
     end
   end
