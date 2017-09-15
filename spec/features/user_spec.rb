@@ -11,7 +11,7 @@ RSpec.feature 'User', type: :feature do
       fill_in 'Password', with: 'user12345', :match => :prefer_exact
       fill_in 'Password confirmation', with: 'user12345', :match => :prefer_exact
 
-      click_button 'Register'
+      click_button 'Sign Up'
       expect(page).to have_content 'All cards'
     end
 

@@ -1,12 +1,16 @@
 language: ruby
 rvm:
-  - 2.4.0
+- 2.4.0
 env:
-  - DB=postgresql
+  global:
+  - secure: cdwnrYRL4pm0JIU4Qq4mpGnhKpwRJIpwZ3TUXVx9pCutAa193e5pGEDHRrMRDbwY4QhrFacvzOf40tQSrHe/p7Z0tvJUyZc2rYozqRhbfg7rAPVWujqabWlpDqVhA5PYdJA9mqHHmBJAHXW9r2hTtaQn1VQqRBbwcs16xC061726Wx3oW/aH4pX5po/VvcT5tc21L0yvN2169UigiNvQwrN7+2URWG9HLb8gvi+vhHvzeyN0v+lOcDAqjJi/1GQDLpmrja3OJyVH5l33Tb0pwKLdt0/W6KHmQ33fbzDt9ygTOhHkFjrDCwddW1ouqEPp8nmoQaa239r9lZwa0scE0CYLF3WBNZCXhubNMfRPBXco+yA+cGLbWwq335UjY4YHjSqgP++fCAbhc1IrONN6DccaRkssARbtupgKfIonxpxXGjkmTjrE/rU6GdFtzBK3/SVxG23uZstyMXR971L6tS6BeILBIXEriyec1Zvh+ElUcmfm7G4wyCyWEzLn42/PkHESj8Cl4p2FbczRAEjRnU0XLlPm3ZeXqlWfEc9oDs2gsogMOWkaIJZxpfxnWj1TNmgJFIvchgIvb1+FSfeTTTlbQhcRkeLsdu9lrfavis3OpZ07vW7P/k1uqAmdMuHqRQ0uf+KUTfHaeickEBqRIn8aUqI5FVR8GXAO2c5seCI=
+  - secure: e+rtcUZ8mWVMRq6NP540qtu/ZwYpQ5JTh+qA+qBjyIPOMQOyKNPe+99U51mwySUB9CLxsMTtkMIPurgvP7VWEwWg0VyITW5/Sj1ROZixVtfZo20yAbl64KnCeeU9wK+oM3M2v1L8jr9KzXDaX40VFnFjWrdJ/Ql3l6eyGzBS59WFZlgHaWnxJ0GtaFcSg0rd85XY946XnV44AxkgrvBhLA3LDY9a1I51/VJFEmR34NrBivmN7f0NlZEg3VYt9MvcNmxOIYeAwR51fiALdxWyFILuzg8xK4NqrAbuwFOrlBpxi9jswPy7NLciJowIRNOpBGw1NA20GP3Solb3MIxCTRcyw/OZT2sOArXeyp57AjbB3lpfy+T/0WjBjQGo8oSp/Xyr0O5dJKPnMfqcu8Wm2Q3qayMBFpRvXJlGEQKxHDkrFqRJlio5+7SXN9ujn6HHB0Lg8vV2p8a0UVwq9hKliHJr9vGzSxNK0xgaejMBL/bOKiOodMyoZcdeBryXZMsRM9cX51QVtOspYjQaSIitvrKJqSlyzAgkSm0uN+EEtt6Rzm2iQV93Y+e0sHboTDStGmUVgHNp5cJpxlfbwtgLYT7cOGGUS0Hb+HME6DkoOoJpiBJ05T1nR1sqdDHCfkGiH+blkLXLv2dsm66+9ZLkg16mGxj3EIV/mFWGB8mmXpo=
+matrix:
+  - DB: postgresql
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec spec
 before_script:
-  - psql -c 'create database flashcards_test' -U postgres
-  - cp config/database.travis.yml config/database.yml
+- psql -c 'create database flashcards_test' -U postgres
+- cp config/database.travis.yml config/database.yml

@@ -28,3 +28,6 @@
 
 # Secret tokens
 .env
+
+# Ignore images
+/public/uploads

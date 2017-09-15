@@ -3,12 +3,14 @@
 
   <table>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Text</th>
     </tr>
 
     <% @cards.each do |card| %>
       <tr>
+        <td><%= link_to(image_tag(card.image.thumb.url, alt: 'Image'), card.image.url, target: '_blank') if card.image? %></td>
         <td><%= card.original_text %></td>
         <td><%= card.translated_text %></td>
         <td><%= card.review_date.strftime('%d/%m/%Y') %></td>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/check', to: 'home#perform'
   get '/sign_up', to: 'users#new', as: :sign_up
   get '/log_in', to: 'sessions#new', as: :log_in
-  delete '/log_out', to: 'sessions#destroy', as: :log_out
+  delete '/', to: 'sessions#destroy', as: :log_out
 
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
