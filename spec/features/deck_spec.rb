@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'support/login_helper'
 
 RSpec.feature 'Decks', type: :feature do
-	let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.create(:user) }
 
   context 'create' do
     before do
@@ -15,11 +15,11 @@ RSpec.feature 'Decks', type: :feature do
     context 'create new deck' do
       before { click_link 'Add a deck' }
 
-			it 'add a deck' do
+      it 'add a deck' do
         fill_in 'Deck name', with: 'First Deck'
         click_button 'Create a Deck'
 
-      	expect(page).to have_content 'Your Deck'
+        expect(page).to have_content 'Your Deck'
       end
     end
   end

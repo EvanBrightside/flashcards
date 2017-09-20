@@ -10,7 +10,7 @@ RSpec.feature 'Card', type: :feature do
     before do
       login("hello@gmail.com", "user12345")
       visit root_path
-      deck = user.decks.create(name: 'First_Deck')
+      user.decks.create(name: 'First_Deck')
     end
 
     context "card checking" do
@@ -39,7 +39,6 @@ RSpec.feature 'Card', type: :feature do
     end
 
     context 'card actions' do
-
       it "create a card" do
         visit new_card_path
         fill_in 'Original text', with: 'Привет'
