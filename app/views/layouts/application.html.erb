@@ -20,6 +20,8 @@
                 <% if current_user %>
                   <li><%= link_to 'All cards', cards_path(@cards) %></li>
                   <li><%= link_to 'Add a card', new_card_path %></li>
+                  <li><%= link_to 'Choose a deck', decks_path(@decks) %></li>
+                  <li><%= link_to 'Add a deck', new_deck_path %></li>
                 <% end %>
               </ul>
                 <ul class='nav navbar-nav pull-right'>

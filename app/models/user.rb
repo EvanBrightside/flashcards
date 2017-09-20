@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :cards, dependent: :destroy
   has_many :authentications, dependent: :destroy
+  has_many :decks, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
   validates :password, length: { in: 6..16 }, if: -> { new_record? || changes[:crypted_password] }

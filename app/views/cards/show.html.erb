@@ -19,4 +19,9 @@
     <%= @card.review_date.strftime('%d/%m/%Y') %>
   </p>
 
+  <p>
+    <strong>Deck Name:</strong>
+    <%= current_user.decks.find(@card.deck_id).name %>
+  </p>
+
 <%= link_to 'Back Home', root_path, :class => 'btn btn-primary btn-sm' %>

@@ -1,10 +1,11 @@
 class Card < ApplicationRecord
-  validates :original_text, :translated_text, presence: true
+  validates :original_text, :translated_text, :deck_id, presence: true
   validates :not_same_value, presence: true
 
   mount_uploader :image, ImageUploader
 
   belongs_to :user, optional: true
+  belongs_to :deck
 
   scope :sample_card, -> { where('review_date <= ?', Date.today) }
 
