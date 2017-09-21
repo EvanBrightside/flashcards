@@ -6,6 +6,7 @@
   <%= simple_form_for @card, url: card_path do |f| %>
     <%= f.input :original_text %>
     <%= f.input :translated_text %>
+    <%= f.input :review_date %>
     <%= f.button :submit %>
   <% end %>
 </div>
