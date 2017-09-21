@@ -8,7 +8,7 @@ class DecksController < ApplicationController
   end
 
   def new
-    @deck = Deck.new
+    @deck = current_user.decks.build
   end
 
   def create
