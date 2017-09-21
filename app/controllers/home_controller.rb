@@ -1,9 +1,13 @@
 # Initial controller for root page
 class HomeController < ApplicationController
   def index
-    @card = current_user.cards.sample_card.sample
+    if params[:deck_id].present?
+      @card = current_user.decks.find(params[:deck_id]).cards.sample_card.sample
+    else
+      @card = current_user.cards.sample_card.sample
+    end
     unless @card
-      flash[:error] = 'All cards done!'
+      flash[:error] = 'All cards done! Please choose another DECK!!!'
       redirect_to cards_path
     end
   end

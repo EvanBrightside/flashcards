@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :cards
+  resources :decks
   resources :home
   resources :users
   resources :sessions, only: %i(new create destroy)

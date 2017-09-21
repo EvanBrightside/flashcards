@@ -24,7 +24,7 @@ RSpec.describe Card, type: :model do
   end
 
   it 'review date is updated' do
-    card = FactoryGirl.create(:card)
+    card = FactoryGirl.build(:card)
     card.new_review_date
     expect(card[:review_date]).to eq(Date.today + 3.days)
   end

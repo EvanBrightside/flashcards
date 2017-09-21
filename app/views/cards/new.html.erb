@@ -4,13 +4,10 @@
   <%= simple_form_for @card, url: cards_path do |f| %>
     <%= f.input :original_text, label: 'Original text' %>
     <%= f.input :translated_text, label: 'Translated text' %>
-    <label>Select File</label>
-    <%= f.file_field :image, label: 'Image' %>
+    <%= f.input :deck_id, collection: @decks, label: 'Choose a deck or create new one', placeholder: 'First Deck'%>
+    <%= f.input :image, as: :file%>
     <%= f.hidden_field :image_cache %>
-    <div class="form-group">
-      <label class="control-label"  >image URL</label>
-      <%= f.text_field :remote_image_url, class: "form-control input-sm" %>
-    </div>
+    <%= f.input :remote_image_url, label: 'Image URL' %>
 
     <%= f.button :submit, 'Create Card', class: 'btn btn-success btn-block' %>
   <% end %>
