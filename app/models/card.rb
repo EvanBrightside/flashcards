@@ -7,7 +7,7 @@ class Card < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :deck
 
-  scope :sample_card, -> { where('review_date <= ?', Date.today) }
+  scope :sample_card, -> { where('review_date <= ?', Time.current) }
 
   before_create :set_revision_date
 
@@ -19,12 +19,21 @@ class Card < ApplicationRecord
     self.translated_text == text
   end
 
-  def new_review_date
-    self.update(review_date: Date.today + 3.days)
+  def new_review_date_and_stage
+    newdate = {
+      1 => Time.current + 12.hour,
+      2 => Time.current + 3.days,
+      3 => Time.current + 1.week,
+      4 => Time.current + 2.weeks,
+      5 => Time.current + 1.month
+    }
+    next_date = newdate[review_stage]
+    next_stage = review_stage < 5 ? review_stage + 1 : 5
+    self.update(review_date: next_date, review_stage: next_stage)
   end
 
   private
     def set_revision_date
-      self.review_date = Date.today
+      self.review_date = Time.current
     end
 end
