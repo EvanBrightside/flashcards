@@ -18,6 +18,7 @@ class HomeController < ApplicationController
       @card.new_review_date_and_stage
       flash[:message] = 'Correct answer!'
     else
+      @card.set_try_count
       flash[:error] = 'Incorrect answer.'
     end
     redirect_back(fallback_location: root_path)

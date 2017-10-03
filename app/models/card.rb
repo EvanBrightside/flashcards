@@ -21,15 +21,24 @@ class Card < ApplicationRecord
 
   def new_review_date_and_stage
     newdate = {
-      1 => Time.current + 12.hour,
-      2 => Time.current + 3.days,
-      3 => Time.current + 1.week,
-      4 => Time.current + 2.weeks,
-      5 => Time.current + 1.month
+      1 => 12.hour,
+      2 => 3.days,
+      3 => 1.week,
+      4 => 2.weeks,
+      5 => 1.month
     }
-    next_date = newdate[review_stage]
+    next_date = Time.current + newdate[review_stage]
     next_stage = review_stage < 5 ? review_stage + 1 : 5
-    self.update(review_date: next_date, review_stage: next_stage)
+    self.update(review_date: next_date, review_stage: next_stage, try_count: 0)
+  end
+
+  def set_try_count
+    count = self[:try_count]
+    if count <= 1
+      self.update(try_count: count + 1)
+    else
+      self.update(review_date: Time.current + 12.hour, review_stage: 2, try_count: 0)
+    end
   end
 
   private
