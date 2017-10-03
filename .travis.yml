@@ -8,7 +8,8 @@ env:
 matrix:
   - DB: postgresql
 script:
-- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rake db:test:prepare
+- RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rspec spec
 before_script:
 - psql -c 'create database flashcards_test' -U postgres
