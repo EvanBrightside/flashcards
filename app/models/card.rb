@@ -12,11 +12,11 @@ class Card < ApplicationRecord
   before_create :set_revision_date
 
   def not_same_value
-    self.original_text.downcase != self.translated_text.downcase
+    !original_text.casecmp(translated_text).zero?
   end
 
   def check_translation(text)
-    self.translated_text == text
+    DamerauLevenshtein.distance(translated_text.downcase, text.downcase)
   end
 
   def new_review_date_and_stage
@@ -33,7 +33,7 @@ class Card < ApplicationRecord
   end
 
   def set_try_count
-    count = self[:try_count]
+    count = try_count
     if count <= 1
       update(try_count: count + 1)
     else
@@ -42,7 +42,8 @@ class Card < ApplicationRecord
   end
 
   private
-    def set_revision_date
-      self.review_date = Time.current
-    end
+
+  def set_revision_date
+    self.review_date = Time.current
+  end
 end

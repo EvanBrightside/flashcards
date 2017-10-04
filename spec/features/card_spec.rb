@@ -23,8 +23,15 @@ RSpec.feature 'Card', type: :feature do
         expect(page).to have_content 'Correct answer!'
       end
 
-      it 'failed message after incorrect checking' do
+      it 'return message after levenshtein checking' do
         fill_in 'Enter the translation', with: 'Hella'
+        click_button 'Check it!'
+
+        expect(page).to have_content 'The correct answer is Hello, you made a typo, your answer was Hella.'
+      end
+
+      it 'failed message after incorrect checking' do
+        fill_in 'Enter the translation', with: 'Halaa'
         click_button 'Check it!'
 
         expect(page).to have_content 'Incorrect answer.'
