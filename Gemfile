@@ -47,8 +47,8 @@ gem 'mini_magick'
 
 group :development, :test do
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'
