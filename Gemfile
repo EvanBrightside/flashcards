@@ -39,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-
+gem 'damerau-levenshtein'
 gem 'fog-aws'
 
 # Use Capistrano for deployment

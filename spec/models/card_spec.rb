@@ -17,14 +17,14 @@ RSpec.describe Card, type: :model do
     card = FactoryGirl.build(:card)
     text = FactoryGirl.attributes_for(:card)[:translated_text]
 
-    expect(card.check_translation(text)).to be true
+    expect(card.check_translation(text)).to be 0
   end
 
   it 'false with incorrect translated text' do
     card = FactoryGirl.build(:card)
     text = FactoryGirl.attributes_for(:card, translated_text: 'Hella')[:translated_text]
 
-    expect(card.check_translation(text)).to be false
+    expect(card.check_translation(text)).to be 1
   end
 
   it 'review date and stage is updated' do
