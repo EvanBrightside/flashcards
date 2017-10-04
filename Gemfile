@@ -48,11 +48,11 @@ gem 'mini_magick'
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'
-  gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
