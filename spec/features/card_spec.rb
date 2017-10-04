@@ -20,14 +20,14 @@ RSpec.feature 'Card', type: :feature do
         fill_in 'Enter the translation', with: 'Hello'
         click_button 'Check it!'
 
-        expect(page).to have_content 'Yep!'
+        expect(page).to have_content 'Correct answer!'
       end
 
       it 'failed message after incorrect checking' do
         fill_in 'Enter the translation', with: 'Hella'
         click_button 'Check it!'
 
-        expect(page).to have_content 'No!'
+        expect(page).to have_content 'Incorrect answer.'
       end
     end
 

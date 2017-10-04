@@ -15,10 +15,11 @@ class HomeController < ApplicationController
   def perform
     @card = current_user.cards.find(params[:home][:id])
     if @card.check_translation(params[:home][:translated_text])
-      @card.new_review_date
-      flash[:message] = 'Yep!'
+      @card.new_review_date_and_stage
+      flash[:message] = 'Correct answer!'
     else
-      flash[:error] = 'No!'
+      @card.set_try_count
+      flash[:error] = 'Incorrect answer.'
     end
     redirect_back(fallback_location: root_path)
   end
