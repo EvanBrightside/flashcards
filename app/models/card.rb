@@ -13,7 +13,6 @@ class Card < ApplicationRecord
 
   def not_same_value
     !original_text.casecmp(translated_text).zero?
-    # original_text.downcase != translated_text.downcase
   end
 
   def check_translation(text)
