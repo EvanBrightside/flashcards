@@ -12,7 +12,8 @@ class Card < ApplicationRecord
   before_create :set_revision_date
 
   def not_same_value
-    original_text.downcase != translated_text.downcase
+    !original_text.casecmp(translated_text).zero?
+    # original_text.downcase != translated_text.downcase
   end
 
   def check_translation(text)

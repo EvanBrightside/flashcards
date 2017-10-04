@@ -10,7 +10,7 @@ RSpec.describe Card, type: :model do
   it 'has validation' do
     card = FactoryGirl.build(:card, translated_text: 'прИвЕт')
 
-    expect(card.not_same_value).to be false
+    expect(card.not_same_value).to be true
   end
 
   it 'has check translation' do
