@@ -42,7 +42,8 @@ class Card < ApplicationRecord
   end
 
   private
-    def set_revision_date
-      self.review_date = Time.current
-    end
+
+  def set_revision_date
+    self.review_date = Time.current
+  end
 end

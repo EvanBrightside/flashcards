@@ -15,10 +15,10 @@ class HomeController < ApplicationController
   def perform
     @card = current_user.cards.find(params[:home][:id])
     compare = @card.check_translation(params[:home][:translated_text])
-    if compare == 0
+    if compare.zero?
       @card.new_review_date_and_stage
       flash[:message] = 'Correct answer!'
-    elsif compare <= 2 && compare != 0
+    elsif compare <= 2 && !compare.zero?
       @card.new_review_date_and_stage
       flash[:message] = "The correct answer is #{@card.translated_text}, you made a typo, your answer was #{params[:home][:translated_text]}."
     else

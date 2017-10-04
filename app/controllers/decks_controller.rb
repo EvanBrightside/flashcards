@@ -1,3 +1,4 @@
+# Decks Controller
 class DecksController < ApplicationController
   def index
     @decks = current_user.decks.all
@@ -28,7 +29,8 @@ class DecksController < ApplicationController
   end
 
   private
-    def deck_params
-      params.require(:deck).permit(:name)
-    end
+
+  def deck_params
+    params.require(:deck).permit(:name)
+  end
 end
