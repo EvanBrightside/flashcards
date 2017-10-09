@@ -40,7 +40,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'damerau-levenshtein'
 gem 'fog-aws'
 gem 'mini_magick'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
