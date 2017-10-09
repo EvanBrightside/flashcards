@@ -19,6 +19,12 @@ class Card < ApplicationRecord
     DamerauLevenshtein.distance(translated_text.downcase, text.downcase)
   end
 
+  def self.pending_cards_notification
+    sample_card.pluck('DISTINCT user_id').each do |user_id|
+      CardsMailer.pending_cards(user_id).deliver_now
+    end
+  end
+
   def new_review_date_and_stage
     newdate = {
       1 => 12.hour,
