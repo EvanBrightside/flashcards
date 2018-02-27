@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       @card = current_user.cards.sample_card.sample
     end
     unless @card
-      flash[:error] = 'All cards done! Please choose another DECK!!!'
+      flash[:error] = t('cards.cards_done')
       redirect_to cards_path
     end
   end
@@ -17,13 +17,13 @@ class HomeController < ApplicationController
     compare = @card.check_translation(params[:home][:translated_text])
     if compare.zero?
       @card.new_review_date_and_stage
-      flash[:message] = 'Correct answer!'
+      flash[:message] = t('cards.correct_answer')
     elsif compare <= 2 && !compare.zero?
       @card.new_review_date_and_stage
-      flash[:message] = "The correct answer is #{@card.translated_text}, you made a typo, your answer was #{params[:home][:translated_text]}."
+      flash[:message] = t('cards.correct_is')
     else
       @card.set_try_count
-      flash[:error] = 'Incorrect answer.'
+      flash[:error] = t('cards.incorrect_answer')
     end
     redirect_back(fallback_location: root_path)
   end

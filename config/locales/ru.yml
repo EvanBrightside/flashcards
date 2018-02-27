@@ -1,0 +1,25 @@
+ru:
+  language:
+    name: Русский
+
+  cards:
+    cards_done: Все карточки выполнены! Пожалуйста выберете другую колоду!
+    correct_answer: Правильный ответ!
+    correct_is: "Правильный ответ: #{@card.translated_text}, а вы написали: #{params[:home][:translated_text]}."
+    incorrect_answer: Неверный ответ.
+
+  email: Почта
+  learn_english_with_flashcards_easily: Флешкарточки!!!
+  please_login_first: Сначала зарегистрируйтесь!
+  sign_up: Зарегистрироваться
+  sign_in: Войти
+
+  layouts:
+    application:
+      not_authenticated:
+        login_first: Пожалуйста зарегистрируйтесь!
+
+  sessions:
+    login:
+      correct: С возвращением!
+      incorrect: E-mail и/или пароль введен не верно.
