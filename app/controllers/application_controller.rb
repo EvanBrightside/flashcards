@@ -13,21 +13,21 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     locale = if current_user
-              current_user.locale
-            elsif params[:locale]
-              session[:locale] = params[:locale]
-            elsif session[:locale]
-              session[:locale]
-            else
-              http_accept_language.compatible_language_from(I18n.available_locales)
-            end
+            current_user.locale
+              elsif params[:locale]
+                session[:locale] = params[:locale]
+              elsif session[:locale]
+                session[:locale]
+              else
+                http_accept_language.compatible_language_from(I18n.available_locales)
+              end
     if locale && I18n.available_locales.include?(locale.to_sym)
       session[:locale] = I18n.locale = locale.to_sym
     end
   end
 
   def not_authenticated
-    flash[:warning] = t('layouts.application.not_authenticated.login_first')
+    flash[:warning] = t(:please_login_first)
     redirect_to log_in_path
   end
 end

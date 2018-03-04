@@ -1,25 +1,65 @@
 ru:
   language:
-    name: Русский
+    name: RU
 
   cards:
     cards_done: Все карточки выполнены! Пожалуйста выберете другую колоду!
     correct_answer: Правильный ответ!
-    correct_is: "Правильный ответ: #{@card.translated_text}, а вы написали: #{params[:home][:translated_text]}."
+    correct_is: "Правильный ответ: %{correct}, вы сделали ошибку, ваш ответ: %{incorrect}."
     incorrect_answer: Неверный ответ.
+    all_cards: Все карточки
+    add_a_card: Добавить карточку
+    image: Картинка
+    image_url: Ссылка на картинку
+    original_text: Текст
+    translated_text: Перевод
+    destroy_card: Удалить карточку
+    edit_card: Редактировать карточку
+    create_card: Создать карточку
+    save_card: Сохранить карточку
+    review_date: Дата пересмотра
+    your_card: Ваша Карточка
 
-  email: Почта
-  learn_english_with_flashcards_easily: Флешкарточки!!!
+  decks:
+    all: Все колоды
+    deck_name: Имя колоды
+    choose_a_deck: Выбрать колоду
+    add_a_deck: Добавить колоду
+    create_deck: Создать колоду
+    your_deck: Ваша колода
+
+  flashcards: Флешкарточки!
   please_login_first: Сначала зарегистрируйтесь!
   sign_up: Зарегистрироваться
   sign_in: Войти
+  log_out: Выйти
+  log_in: Войти
+  name: Имя
+  email: E-mail
+  password: Пароль
+  password_confirmation: Подтверждение пароля
+  remember_me: Запомнить меня
+  are_you_sure: Вы уверены?
+  back_home: Назад
+  check_it: Проверить!
+  enter_translation: Введите перевод
+  locale: Язык приложения
 
-  layouts:
-    application:
-      not_authenticated:
-        login_first: Пожалуйста зарегистрируйтесь!
+  via_facebook: через Facebook
+  via_twitter: через Twitter
+  via_github: через Github
+  via_vk: через VK
+
+  flash:
+    update: Успешно обновлено!
+    welcome: Добро пожаловать!
 
   sessions:
     login:
       correct: С возвращением!
       incorrect: E-mail и/или пароль введен не верно.
+
+  profile:
+    update: Обновить профиль
+    edit: Редактировать профиль
+    save: Сохранить

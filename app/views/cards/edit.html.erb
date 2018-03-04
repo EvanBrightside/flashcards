@@ -1,12 +1,13 @@
 <div class='col-md-12 col-sm-offset-2'>
-  <h2>Edit Card</h2>
+  <h2><%= t('cards.edit_card') %></h2>
 </div>
 
 <div>
   <%= simple_form_for @card, url: card_path do |f| %>
-    <%= f.input :original_text %>
-    <%= f.input :translated_text %>
-    <%= f.input :review_date %>
-    <%= f.button :submit %>
+    <%= f.input :original_text, label: t('cards.original_text') %>
+    <%= f.input :translated_text, label: t('cards.translated_text') %>
+    <%= image_tag(@card.image_url(:thumb).to_s) if @card.image? %>
+    <%= f.input :review_date, label: t('cards.review_date') %>
+    <%= f.button :submit, t('cards.save_card') %>
   <% end %>
 </div>

@@ -16,10 +16,10 @@ RSpec.feature 'Decks', type: :feature do
       before { click_link 'Add a deck' }
 
       it 'add a deck' do
-        fill_in 'Deck name', with: 'First Deck'
-        click_button 'Create a Deck'
+        fill_in "Deck's name", with: 'First Deck'
+        click_button 'Create a deck'
 
-        expect(page).to have_content 'Your Deck'
+        expect(page).to have_content 'Your deck'
       end
     end
   end

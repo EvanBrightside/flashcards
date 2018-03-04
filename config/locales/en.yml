@@ -1,24 +1,64 @@
 en:
   language:
-    name: English
+    name: EN
 
   cards:
     cards_done: All cards done! Please choose another DECK!!!
     correct_answer: Correct answer!
-    correct_is: "The correct answer is #{@card.translated_text}, you made a typo, your answer was #{params[:home][:translated_text]}."
+    correct_is: "The correct answer is %{correct}, you made a typo, your answer was %{incorrect}."
     incorrect_answer: Incorrect answer.
+    all_cards: All cards
+    add_a_card: Add a card
+    image: Image
+    image_url: Image link
+    original_text: Original text
+    translated_text: Translated text
+    destroy_card: Destroy card
+    edit_card: Edit card
+    save_card: Save card
+    create_card: Create a card
+    your_card: Your card
 
-  learn_english_with_flashcards_easily: Flashcards!!!
+  decks:
+    all: All decks
+    deck_name: Deck's name
+    choose_a_deck: Choose a deck
+    add_a_deck: Add a deck
+    create_deck: Create a deck
+    your_deck: Your deck
+
+  flashcards: Flashcards!
   please_login_first: Please login first!
   sign_up: Sign Up
   sign_in: Sign In
+  log_out: Log out
+  log_in: Log In
+  name: Name
+  email: E-mail
+  password: Password
+  password_confirmation: Password confirmation
+  remember_me: Remember me
+  are_you_sure: Are you sure?
+  back_home: Back Home
+  check_it: Check it!
+  enter_translation: Enter the translation
+  locale: Localization
 
-  layouts:
-    application:
-      not_authenticated:
-        login_first: Please login first!
+  via_facebook: via Facebook
+  via_twitter: via Twitter
+  via_github: via Github
+  via_vk: via VK
+
+  flash:
+    update: Update successfully!
+    welcome: Welcome!
 
   sessions:
     login:
       correct: Welcome back!
       incorrect: E-mail and/or password is incorrect.
+
+  profile:
+    update: Update your profile
+    edit: Edit profile
+    save: Save

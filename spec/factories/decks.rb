@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :deck do
-    name 'First_Deck'
+    name 'First_deck'
   end
 end

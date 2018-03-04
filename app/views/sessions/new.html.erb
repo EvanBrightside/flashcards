@@ -1,20 +1,20 @@
 <div class='col-md-4 col-md-offset-4 text-center panel panel-default'>
-  <h1 class="text-primary">Sign In</h1>
+  <h1 class="text-primary"><%= t(:log_in) %></h1>
 
   <%= simple_form_for :session, { url: sessions_path } do |f| %>
 
-    <%= f.input :email, input_html: { name: 'email' }, label: 'Email', required: true %>
+    <%= f.input :email, input_html: { name: 'email' }, label: t(:email), required: true %>
 
-    <%= f.input :password, input_html: { name: 'password' }, label: 'Password', required: true %>
+    <%= f.input :password, input_html: { name: 'password' }, label: t(:password), required: true %>
 
-    <%= f.input :remember_me, input_html: { name: 'remember_me' }, as: :boolean %>
+    <%= f.input :remember_me, input_html: { name: 'remember_me' }, label: t(:remember_me), as: :boolean %>
 
-    <%= f.button :submit, 'Log In', class: 'btn btn-success btn-block' %>
+    <%= f.button :submit, t(:log_in), class: 'btn btn-success btn-block' %>
     <br>
-    <%= link_to 'via Facebook', auth_at_provider_path(provider: :facebook), class: 'btn btn-primary btn-block' %>
-    <%= link_to 'via Twitter', auth_at_provider_path(provider: :twitter), class: 'btn btn-info btn-block' %>
-    <%= link_to 'via Github', auth_at_provider_path(provider: :github), class: 'btn btn-default btn-block' %>
-    <%= link_to 'via VK', auth_at_provider_path(provider: :vk), class: 'btn btn-primary btn-block' %>
+    <%= link_to t(:via_facebook), auth_at_provider_path(provider: :facebook), class: 'btn btn-primary btn-block' %>
+    <%= link_to t(:via_twitter), auth_at_provider_path(provider: :twitter), class: 'btn btn-info btn-block' %>
+    <%= link_to t(:via_github), auth_at_provider_path(provider: :github), class: 'btn btn-default btn-block' %>
+    <%= link_to t(:via_vk), auth_at_provider_path(provider: :vk), class: 'btn btn-primary btn-block' %>
     <br>
 
   <% end %>

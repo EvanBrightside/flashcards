@@ -1,10 +1,10 @@
 <div class='col-md-4 col-md-offset-4 text-center'>
-  <h2>Add a Deck</h2>
+  <h2><%= t('decks.add_a_deck') %></h2>
 
   <%= simple_form_for @deck, url: decks_path do |f| %>
-    <%= f.input :name, label: 'Deck name' %>
+    <%= f.input :name, label: t('decks.deck_name') %>
 
-    <%= f.button :submit, 'Create a Deck', class: 'btn btn-success btn-block' %>
+    <%= f.button :submit, t('decks.create_deck'), class: 'btn btn-success btn-block' %>
   <% end %>
 
 </div>

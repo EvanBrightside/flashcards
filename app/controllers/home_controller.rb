@@ -20,7 +20,8 @@ class HomeController < ApplicationController
       flash[:message] = t('cards.correct_answer')
     elsif compare <= 2 && !compare.zero?
       @card.new_review_date_and_stage
-      flash[:message] = t('cards.correct_is')
+      flash[:message] = t('cards.correct_is', correct: @card.translated_text,
+                          incorrect: params[:home][:translated_text])
     else
       @card.set_try_count
       flash[:error] = t('cards.incorrect_answer')

@@ -1,8 +1,8 @@
-<h2>Your Deck</h2>
+<h2><%= t('decks.your_deck') %></h2>
 
   <p>
-    <strong>DeckName:</strong>
+    <strong><%= t('decks.deck_name') %>:</strong>
     <%= @deck.name %>
   </p>
 
-<%= link_to 'Back Home', root_path, :class => 'btn btn-primary btn-sm' %>
+<%= link_to t(:back_home), root_path, :class => 'btn btn-primary btn-sm' %>
