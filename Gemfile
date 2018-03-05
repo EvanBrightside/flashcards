@@ -40,7 +40,9 @@ gem 'carrierwave', '~> 1.0'
 gem 'damerau-levenshtein'
 gem 'fog-aws'
 gem 'mini_magick'
+gem 'http_accept_language'
 gem 'whenever', require: false
+gem 'rails-i18n', '~> 5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

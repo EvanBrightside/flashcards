@@ -1,23 +1,64 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  language:
+    name: EN
+
+  cards:
+    cards_done: All cards done! Please choose another DECK!!!
+    correct_answer: Correct answer!
+    correct_is: "The correct answer is %{correct}, you made a typo, your answer was %{incorrect}."
+    incorrect_answer: Incorrect answer.
+    all_cards: All cards
+    add_a_card: Add a card
+    image: Image
+    image_url: Image link
+    original_text: Original text
+    translated_text: Translated text
+    destroy_card: Destroy card
+    edit_card: Edit card
+    save_card: Save card
+    create_card: Create a card
+    your_card: Your card
+
+  decks:
+    all: All decks
+    deck_name: Deck's name
+    choose_a_deck: Choose a deck
+    add_a_deck: Add a deck
+    create_deck: Create a deck
+    your_deck: Your deck
+
+  flashcards: Flashcards!
+  please_login_first: Please login first!
+  sign_up: Sign Up
+  sign_in: Sign In
+  log_out: Log out
+  log_in: Log In
+  name: Name
+  email: E-mail
+  password: Password
+  password_confirmation: Password confirmation
+  remember_me: Remember me
+  are_you_sure: Are you sure?
+  back_home: Back Home
+  check_it: Check it!
+  enter_translation: Enter the translation
+  locale: Localization
+
+  via_facebook: via Facebook
+  via_twitter: via Twitter
+  via_github: via Github
+  via_vk: via VK
+
+  flash:
+    update: Update successfully!
+    welcome: Welcome!
+
+  sessions:
+    login:
+      correct: Welcome back!
+      incorrect: E-mail and/or password is incorrect.
+
+  profile:
+    update: Update your profile
+    edit: Edit profile
+    save: Save

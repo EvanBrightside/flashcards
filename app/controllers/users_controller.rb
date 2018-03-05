@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save!
       login(params[:user][:email], params[:user][:password])
-      flash[:success] = 'Welcome!'
+      flash[:success] = t('flash.welcome')
       redirect_to root_path
     else
       render 'new'
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update!(user_params)
-      flash[:success] = 'Update successfully!'
+      flash[:success] = t('flash.update')
       redirect_to root_path
     else
       render :edit
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :locale, :password, :password_confirmation)
   end
 end

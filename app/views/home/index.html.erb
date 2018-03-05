@@ -15,8 +15,8 @@
       <%= simple_form_for :home, url: '/check', method: :post  do |f| %>
           <br>
           <%= f.hidden_field :id, value: @card.id %>
-          <%= f.input :translated_text, label: 'Enter the translation' %>
-          <%= f.button :submit, 'Check it!', class: 'btn btn-danger' %>
+          <%= f.input :translated_text, label: t(:enter_translation) %>
+          <%= f.button :submit, t(:check_it), class: 'btn btn-danger' %>
           <br><br>
       <% end %>
     </div>

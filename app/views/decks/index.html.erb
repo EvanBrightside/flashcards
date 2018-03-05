@@ -1,5 +1,5 @@
 <div class='col-md-12 col-sm-offset-2'>
-  <h2>The current deck will be:</h2>
+  <h2><%= t('decks.all') %>:</h2>
 
   <% @decks.each do |deck| %>
     <p><%= link_to deck.name, root_path(deck_id: deck[:id]) %></p>

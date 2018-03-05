@@ -10,7 +10,6 @@ RSpec.feature 'Card', type: :feature do
     before do
       login("hello@gmail.com", "user12345")
       visit root_path
-      user.decks.create(name: 'First_Deck')
     end
 
     context "card checking" do
@@ -42,7 +41,7 @@ RSpec.feature 'Card', type: :feature do
       fill_in 'Enter the translation', with: 'Hello'
       click_button 'Check it!'
 
-      expect(page).to have_content 'All cards done!'
+      expect(page).to have_content 'All cards done! Please choose another DECK!!!'
     end
 
     context 'card actions' do
@@ -50,10 +49,10 @@ RSpec.feature 'Card', type: :feature do
         visit new_card_path
         fill_in 'Original text', with: 'Привет'
         fill_in 'Translated text', with: 'Hello'
-        select 'First_Deck', from: 'card[deck_id]'
+        select 'First_deck', from: 'card[deck_id]'
 
-        click_button 'Create Card'
-        expect(page).to have_content 'Your Card'
+        click_button 'Create a card'
+        expect(page).to have_content 'Your card'
       end
     end
   end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flashcards</title>
+    <title><%= t(:flashcards) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,27 +11,41 @@
     <nav class='navbar navbar-inverse'>
       <div class='container'>
         <div class="row">
-          <div class='col-md-8 col-md-offset-2'>
+          <div class='col-md-12'>
             <div class='navbar-header'>
-              <%= link_to 'Flashcards', root_path, class: 'navbar-brand' %>
+              <%= link_to t(:flashcards), root_path, class: 'navbar-brand' %>
             </div>
             <div id='navbar'>
               <ul class='nav navbar-nav'>
                 <% if current_user %>
-                  <li><%= link_to 'All cards', cards_path(@cards) %></li>
-                  <li><%= link_to 'Add a card', new_card_path %></li>
-                  <li><%= link_to 'Choose a deck', decks_path(@decks) %></li>
-                  <li><%= link_to 'Add a deck', new_deck_path %></li>
+                  <li><%= link_to t('cards.all_cards'), cards_path(@cards) %></li>
+                  <li><%= link_to t('cards.add_a_card'), new_card_path %></li>
+                  <li><%= link_to t('decks.choose_a_deck'), decks_path(@decks) %></li>
+                  <li><%= link_to t('decks.add_a_deck'), new_deck_path %></li>
+                <% else %>
+                  <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <%= t('language.name') %>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <% I18n.available_locales.each do |lang| %>
+                        <li>
+                          <%= link_to t(lang), locale: lang %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </li>
                 <% end %>
               </ul>
-                <ul class='nav navbar-nav pull-right'>
-                  <% if current_user %>
-                    <li><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
-                    <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
-                  <% else %>
-                    <%= render "partials/links" %>
-                  <% end %>
-                </ul>
+              <ul class='nav navbar-nav pull-right'>
+                <% if current_user %>
+                  <li><%= link_to t('profile.edit'), edit_user_path(current_user.id) %></li>
+                  <li><%= link_to t(:log_out), log_out_path, method: :delete %></li>
+                <% else %>
+                  <%= render "partials/links" %>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>
@@ -39,8 +53,8 @@
     </nav>
 
     <div class='container'>
-      <div class='col-md-9 col-sm-offset-3' style='font-size: 36px;'>
-        Learn English with flashcards easily!
+      <div class='col-md-6 col-sm-offset-3 text-center' style='font-size: 36px;'>
+        <%= t(:flashcards) %>
       </div><br><br>
     </div>
     <br>

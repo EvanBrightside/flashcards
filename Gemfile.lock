@@ -102,6 +102,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    http_accept_language (2.1.1)
     i18n (0.8.1)
     ipaddress (0.8.3)
     jbuilder (2.6.3)
@@ -168,6 +169,9 @@ GEM
       nokogiri (~> 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.1.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.0.2)
       actionpack (= 5.0.2)
       activesupport (= 5.0.2)
@@ -258,6 +262,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   fog-aws
+  http_accept_language
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -269,6 +274,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rack
   rails (~> 5.0.2)
+  rails-i18n (~> 5.1)
   rspec-rails
   sass-rails (~> 5.0)
   simple_form
@@ -282,4 +288,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.16.0.pre.1
+   1.16.1

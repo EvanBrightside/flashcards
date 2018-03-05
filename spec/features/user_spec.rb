@@ -7,7 +7,7 @@ RSpec.feature 'User', type: :feature do
       visit sign_up_path
 
       fill_in 'Name', with: 'Evan'
-      fill_in 'Email', with: 'hello@gmail.com'
+      fill_in 'E-mail', with: 'hello@gmail.com'
       fill_in 'Password', with: 'user12345', :match => :prefer_exact
       fill_in 'Password confirmation', with: 'user12345', :match => :prefer_exact
 
@@ -24,7 +24,7 @@ RSpec.feature 'User', type: :feature do
       end
 
       it 'without any cards in base' do
-        fill_in 'Email', with: 'hello@gmail.com'
+        fill_in 'E-mail', with: 'hello@gmail.com'
         fill_in 'Password', with: 'user12345'
 
         click_button 'Log In'
@@ -34,7 +34,7 @@ RSpec.feature 'User', type: :feature do
       it 'with any cards in base' do
         FactoryGirl.create(:card, user_id: user[:id], deck_id: deck[:id])
 
-        fill_in 'Email', with: 'hello@gmail.com'
+        fill_in 'E-mail', with: 'hello@gmail.com'
         fill_in 'Password', with: 'user12345'
 
         click_button 'Log In'
@@ -48,7 +48,7 @@ RSpec.feature 'User', type: :feature do
       login("hello@gmail.com", "user12345")
       visit root_path
 
-      click_link 'Log Out'
+      click_link 'Log out'
       expect(page).to have_content 'See you!'
     end
   end
