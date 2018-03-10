@@ -14,8 +14,8 @@ class HomeController < ApplicationController
   def perform
     @card = current_user.cards.find(params[:home][:id])
     answer = params[:home][:translated_text]
-    @message = CheckAnswer.new(@card, answer).check
-    flash[:message] = @message
-    redirect_back(fallback_location: root_path)
+    message = CheckAnswer.new(@card, answer).check
+    flash[:message] = message
+    redirect_to root_path
   end
 end
