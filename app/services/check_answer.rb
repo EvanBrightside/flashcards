@@ -35,7 +35,8 @@ class CheckAnswer
   end
 
   def correct?
-    @translate.casecmp?(@answer)
+    @translate.downcase == @answer.downcase
+    # @translate.casecmp?(@answer)
   end
 
   def typo?
