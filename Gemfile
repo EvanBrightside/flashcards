@@ -50,7 +50,7 @@ gem 'rails-i18n', '~> 5.1'
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'

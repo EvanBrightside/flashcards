@@ -45,6 +45,8 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:deck_id, :original_text, :translated_text, :review_date, :review_stage, :image, :image_cache, :remote_image_url)
+    params.require(:card).permit(:deck_id, :original_text, :translated_text,
+                                 :review_date, :review_stage, :image,
+                                 :image_cache, :remote_image_url)
   end
 end

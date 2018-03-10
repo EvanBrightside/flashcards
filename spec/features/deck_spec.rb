@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'support/login_helper'
 
 RSpec.feature 'Decks', type: :feature do
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryBot.create(:user) }
 
   context 'create' do
     before do

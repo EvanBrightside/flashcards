@@ -6,26 +6,16 @@ class HomeController < ApplicationController
     else
       @card = current_user.cards.sample_card.sample
     end
-    unless @card
-      flash[:error] = t('cards.cards_done')
-      redirect_to cards_path
-    end
+    return if @card
+    redirect_to cards_path
+    flash[:error] = t('cards.cards_done')
   end
 
   def perform
     @card = current_user.cards.find(params[:home][:id])
-    compare = @card.check_translation(params[:home][:translated_text])
-    if compare.zero?
-      @card.new_review_date_and_stage
-      flash[:message] = t('cards.correct_answer')
-    elsif compare <= 2 && !compare.zero?
-      @card.new_review_date_and_stage
-      flash[:message] = t('cards.correct_is', correct: @card.translated_text,
-                          incorrect: params[:home][:translated_text])
-    else
-      @card.set_try_count
-      flash[:error] = t('cards.incorrect_answer')
-    end
+    answer = params[:home][:translated_text]
+    message = CheckAnswer.new(@card, answer).check
+    flash[:message] = message
     redirect_back(fallback_location: root_path)
   end
 end
