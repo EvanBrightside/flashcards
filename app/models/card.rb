@@ -17,7 +17,7 @@ class Card < ApplicationRecord
 
   def self.pending_cards_notification
     sample_card.pluck('DISTINCT user_id').each do |user_id|
-      CardsMailer.pending_cards(user_id).deliver_now
+      CardsMailer.pending_cards(user_id).deliver_later
     end
   end
 

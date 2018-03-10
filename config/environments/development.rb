@@ -52,26 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'https://learnflashcards.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
 
-  config.action_mailer.smtp_settings = {
-    address:             'smtp.sendgrid.net',
-    port:                 587,
-    authentication:      'plain',
-    user_name:            ENV['SENDGRID_USERNAME'],
-    password:             ENV['SENDGRID_PASSWORD'],
-    domain:              'heroku.com',
-    enable_starttls_auto: true
-  }
-
-  # config.action_mailer.smtp_settings = {
-  #   address:              'smtp.gmail.com',
-  #   port:                 587,
-  #   domain:               'heroku.com',
-  #   user_name:            ENV['MAILER_USER_NAME'],
-  #   password:             ENV['MAILER_PASSWORD'],
-  #   authentication:       'plain',
-  #   enable_starttls_auto: true
-  # }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
