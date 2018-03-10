@@ -3,9 +3,9 @@ require 'support/login_helper'
 
 RSpec.feature 'Card', type: :feature do
   describe 'Card tasks' do
-    let!(:user) { FactoryGirl.create(:user) }
-    let!(:deck) { FactoryGirl.create(:deck) }
-    let!(:card) { FactoryGirl.create(:card, user: user, deck: deck) }
+    let!(:user) { FactoryBot.create(:user) }
+    let!(:deck) { FactoryBot.create(:deck) }
+    let!(:card) { FactoryBot.create(:card, user: user, deck: deck) }
 
     before do
       login("hello@gmail.com", "user12345")
@@ -13,7 +13,7 @@ RSpec.feature 'Card', type: :feature do
     end
 
     context "card checking" do
-      let!(:second_card) { FactoryGirl.create(:card, user: user, deck: deck) }
+      let!(:second_card) { FactoryBot.create(:card, user: user, deck: deck) }
 
       it 'successfull message after correct checking' do
         fill_in 'Enter the translation', with: 'Hello'

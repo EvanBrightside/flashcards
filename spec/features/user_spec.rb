@@ -16,8 +16,8 @@ RSpec.feature 'User', type: :feature do
     end
 
     context 'log me in' do
-      let!(:user) { FactoryGirl.create(:user) }
-      let!(:deck) { FactoryGirl.create(:deck) }
+      let!(:user) { FactoryBot.create(:user) }
+      let!(:deck) { FactoryBot.create(:deck) }
 
       before(:each) do
         visit log_in_path
@@ -32,7 +32,7 @@ RSpec.feature 'User', type: :feature do
       end
 
       it 'with any cards in base' do
-        FactoryGirl.create(:card, user_id: user[:id], deck_id: deck[:id])
+        FactoryBot.create(:card, user_id: user[:id], deck_id: deck[:id])
 
         fill_in 'E-mail', with: 'hello@gmail.com'
         fill_in 'Password', with: 'user12345'
@@ -43,7 +43,7 @@ RSpec.feature 'User', type: :feature do
     end
 
     it 'log me out' do
-      FactoryGirl.create(:user)
+      FactoryBot.create(:user)
 
       login("hello@gmail.com", "user12345")
       visit root_path

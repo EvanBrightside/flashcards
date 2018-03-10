@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe CardsMailer, type: :mailer do
-  user = FactoryGirl.build(:user)
-  mail = FactoryGirl.build(:mail)
+  user = FactoryBot.build(:user)
+  mail = FactoryBot.build(:mail)
 
   it 'renders the subject' do
     expect(mail.subject).to eq('You have a new cards!')
