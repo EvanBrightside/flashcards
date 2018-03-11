@@ -1,7 +1,6 @@
 # Initial controller for root page
 class HomeController < ApplicationController
   def index
-    binding.pry
     if params[:deck_id].present?
       @card = current_user.decks.find(params[:deck_id]).cards.sample_card.sample
     else

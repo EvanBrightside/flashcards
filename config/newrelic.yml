@@ -11,7 +11,7 @@
 # https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-configuration
 
 common: &default_settings
-  license_key: 9a512ea5b7dc14041ba7791710fcd40e4043e071
+  license_key: <%= ENV['NEW_RELIC_KEY'] %>
   app_name: FLASHCARDS
   log_level: info
 
