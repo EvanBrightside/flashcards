@@ -32,7 +32,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'delayed_job_active_record'
+gem 'sentry-raven'
+gem 'newrelic_rpm'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -44,6 +45,7 @@ gem 'mini_magick'
 gem 'http_accept_language'
 gem 'whenever', require: false
 gem 'rails-i18n', '~> 5.1'
+gem 'letter_opener'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
