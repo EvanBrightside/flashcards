@@ -10,7 +10,7 @@ User.create!(email: 'im@gmail.com', password: '1q2w3e4r', password_confirmation:
 @ru_deck = Deck.create!(name: 'RU Deck', user_id: User.last.id)
 @it_deck = Deck.create!(name: 'IT Deck', user_id: User.last.id)
 
-18.times do |card|
+40.times do |card|
   line_count = card + 2
   Card.create!(
     original_text: ru_data.xpath("//table//tbody/tr[#{line_count}]/td[2]").text,
@@ -22,7 +22,7 @@ User.create!(email: 'im@gmail.com', password: '1q2w3e4r', password_confirmation:
   )
 end
 
-18.times do |card|
+40.times do |card|
   line_count = card + 2
   Card.create!(
     original_text: it_data.xpath("//table//tbody/tr[#{line_count}]/td[2]").text,
