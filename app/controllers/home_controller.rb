@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     message = CheckAnswer.new(@card, answer).check
     flash[:message] = message
     respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
+      #format.html { redirect_back(fallback_location: root_path) }
       format.js
     end
   end
