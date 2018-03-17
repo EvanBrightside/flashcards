@@ -15,11 +15,11 @@
   </span>
 </div>
 <div class="row">
-  <div class='col-md-6 text-center'>
+  <div id="check_card" class='col-md-6 text-center'>
     <%= simple_form_for :home, url: '/check', method: :post, remote: true do |f| %>
         <br>
         <%= f.hidden_field :id, value: @card.id %>
-        <%= f.input :translated_text, label: t(:enter_translation) %>
+        <%= f.input :translated_text, label: t(:enter_translation), autofocus: true %>
         <%= f.button :submit, t(:check_it), class: 'btn btn-danger' %>
         <br><br>
     <% end %>
