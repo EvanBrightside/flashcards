@@ -2,7 +2,7 @@ set :application, 'flashcards'
 
 set :repo_url, 'git@github.com:EvanBrightside/flashcards.git'
 
-set :branch, 'twentieth_task'
+set :branch, 'master'
 
 set :deploy_to, '/home/deploy/applications/flashcards'
 
