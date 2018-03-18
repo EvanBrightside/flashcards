@@ -1,5 +1,5 @@
 # Controller for Cards page
-class CardsController < ApplicationController
+class Dashboard::CardsController < ApplicationController
   def index
     @cards = current_user.cards.all
   end

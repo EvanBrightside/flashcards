@@ -1,0 +1,3 @@
+$('#card-section').html('<%= j(render partial: 'card') %>').hide().fadeIn('slow');
+$('#message-section').html('<%= j flash[:message] %>').fadeOut(5000);
+$('#home_translated_text').focus();

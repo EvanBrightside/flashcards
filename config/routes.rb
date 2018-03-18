@@ -6,13 +6,16 @@ Rails.application.routes.draw do
 
     root "home#index"
 
-    resources :cards
-    resources :decks
-    resources :home
-    resources :users
+    scope module: 'dashboard' do
+      resources :cards, :decks, :home
+      resources :users, only: %i(show edit update)
+    end
+
+    resources :home, only: :index
+    resources :users, only: %i(new create)
     resources :sessions, only: %i(new create destroy)
 
-    post '/check', to: 'home#perform'
+    post '/check', to: 'dashboard/home#perform'
     get '/sign_up', to: 'users#new', as: :sign_up
     get '/sessions', to: 'sessions#new'
     get '/log_in', to: 'sessions#new', as: :log_in
