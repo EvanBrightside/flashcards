@@ -6,11 +6,22 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-
+#
 server '52.207.220.223', user: 'ubuntu', roles: %w[app db web]
 
 set :rails_env, :production
 set :stage, :production
+
+# ip = '52.207.220.223'
+#
+# role :app, ["deploy@#{ip}"]
+# role :web, ["deploy@#{ip}"]
+# role :db,  ["deploy@#{ip}"]
+#
+# server ip, user: 'ubuntu', roles: %w{web app db}
+#
+# set :stage, 'production'
+# set :rails_env, 'production'
 
 
 # role-based syntax
