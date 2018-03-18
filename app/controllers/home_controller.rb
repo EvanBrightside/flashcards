@@ -6,7 +6,11 @@ class HomeController < ApplicationController
     else
       @card = current_user.cards.sample_card.sample
     end
-    return if @card
+    respond_to do |format|
+      format.html
+      format.js { flash[:message] }
+    end
+    return if  @card
     redirect_to cards_path
     flash[:error] = t('cards.cards_done')
   end
@@ -16,6 +20,7 @@ class HomeController < ApplicationController
     answer = params[:home][:translated_text]
     message = CheckAnswer.new(@card, answer).check
     flash[:message] = message
-    redirect_back(fallback_location: root_path)
+
+    redirect_to home_index_path
   end
 end
