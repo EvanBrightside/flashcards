@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
     get 'oauths/callback'
 
-    root "home#index"
+    root 'dashboard/home#index'
 
     scope module: 'dashboard' do
       resources :cards, :decks, :home
       resources :users, only: %i(show edit update)
     end
 
-    resources :home, only: :index
     resources :users, only: %i(new create)
     resources :sessions, only: %i(new create destroy)
 

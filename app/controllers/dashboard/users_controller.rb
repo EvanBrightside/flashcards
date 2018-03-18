@@ -1,6 +1,6 @@
 # Initial controller for user sign up
 class Dashboard::UsersController < ApplicationController
-  skip_before_action :require_login, only: %i(index new create)
+  skip_before_action :require_login, only: %i[index new create]
 
   def edit
     @user = User.find(params[:id])
