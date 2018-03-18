@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.js
+      format.js { flash[:message] }
     end
     return if  @card
     redirect_to cards_path

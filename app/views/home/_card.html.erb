@@ -1,6 +1,12 @@
 <div class="row">
+  <div id="message-section" class='col-md-6' style='font-size: 16px;'></div>
+  <br>
+</div>
+<div class="row">
   <div class='col-md-6' style='font-size: 22px;'>
-    <%= link_to(image_tag(@card.image.thumb.url, alt: 'Image'), @card.image.url, target: '_blank') if @card.image? %>
+
+    <%= link_to(image_tag(@card.image.thumb.url, alt: 'Image'),
+                          @card.image.url, target: '_blank') if @card.image? %>
   </div>
 </div>
 <br>
@@ -10,12 +16,7 @@
   </div>
 </div>
 <div class="row">
-  <span class='col-md-6 text-center' style='font-size: 22px;'>
-    <%= link_to "Ввести перевод" %>
-  </span>
-</div>
-<div class="row">
-  <div id="check_card" class='col-md-6 text-center'>
+  <div class='col-md-6 text-center'>
     <%= simple_form_for :home, url: '/check', method: :post, remote: true do |f| %>
         <br>
         <%= f.hidden_field :id, value: @card.id %>
