@@ -31,3 +31,6 @@
 
 # Ignore images
 /public/uploads
+
+# Ignore keys
+/config/provision/keys*

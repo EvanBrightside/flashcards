@@ -1,19 +1,18 @@
 # Initial controller for user sign up
-class UsersController < ApplicationController
+class Dashboard::UsersController < ApplicationController
   skip_before_action :require_login, only: %i[index new create]
 
-  def new
-    @user = User.new
+  def edit
+    @user = User.find(params[:id])
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save!
-      login(params[:user][:email], params[:user][:password])
-      flash[:success] = t('flash.welcome')
+  def update
+    @user = User.find(params[:id])
+    if @user.update!(user_params)
+      flash[:success] = t('flash.update')
       redirect_to root_path
     else
-      render 'new'
+      render :edit
     end
   end
 

@@ -47,9 +47,6 @@ gem 'whenever', require: false
 gem 'rails-i18n', '~> 5.1'
 gem 'letter_opener'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
@@ -63,6 +60,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
+
   gem 'listen', '~> 3.0.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

@@ -1,5 +1,5 @@
 # Initial controller for root page
-class HomeController < ApplicationController
+class Dashboard::HomeController < ApplicationController
   def index
     if params[:deck_id].present?
       @card = current_user.decks.find(params[:deck_id]).cards.sample_card.sample
