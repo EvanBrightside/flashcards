@@ -8,7 +8,7 @@ set :deploy_to, '/home/deploy/applications/flashcards'
 
 set :log_level, :info
 
-append :linked_files, 'config/database.yml', '.env'
+set :linked_files, %w{config/database.yml .env}
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 set :rbenv_type, :user

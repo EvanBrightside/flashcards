@@ -7,8 +7,6 @@ require "capistrano/rails"
 require "capistrano/puma"
 require 'dotenv'
 require "capistrano/scm/git"
-require 'capistrano/rails/migrations'
-require 'capistrano-db-tasks'
 
 install_plugin Capistrano::SCM::Git
 
