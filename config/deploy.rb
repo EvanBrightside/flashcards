@@ -2,13 +2,13 @@ set :application, 'flashcards'
 
 set :repo_url, 'git@github.com:EvanBrightside/flashcards.git'
 
-set :branch, 'master'
+set :branch, 'twentieth_task'
 
 set :deploy_to, '/home/deploy/applications/flashcards'
 
 set :log_level, :info
 
-set :linked_files, 'config/database.yml', '.env'
+set :linked_files, 'config/database.yml'
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads}
 
 set :rbenv_type, :user
