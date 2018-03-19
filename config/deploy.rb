@@ -9,7 +9,7 @@ set :deploy_to, '/home/deploy/applications/flashcards'
 set :log_level, :info
 
 set :linked_files, %w{config/database.yml .env}
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.4.3'
