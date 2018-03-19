@@ -60,11 +60,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-puma'
-  gem 'capistrano'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano', require: false
 
   gem 'listen', '~> 3.0.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -74,6 +74,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'capistrano-db-tasks'
+gem 'capistrano-db-tasks', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
